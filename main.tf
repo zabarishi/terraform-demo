@@ -8,5 +8,16 @@ provider "aws" {
 # but has no significance outside that module's scope.
 resource "aws_instance" "myec2" {
   ami           = "ami-5b41123e"
-  instance_type = "t2.nano"
+  instance_type = "t2.micro"
+}
+
+locals {
+  db_password = {
+    admin = "password"
+  }
+}
+
+output "db_password" {
+  value     = local.db_password
+  sensitive = true
 }
