@@ -1,0 +1,13 @@
+name: create branch
+on:
+ workflow_dispatch 
+jobs:
+  create_branch_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: create branch
+      run: |
+        git config --global user.email "zabarishi@gmail.com"
+        git config --global user.name "zabarishi"
+        curl -u "username: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" https://github.com/zabarishi/terraform-demo/tree/master
+        git checkout -b demobranch
