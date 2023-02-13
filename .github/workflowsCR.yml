@@ -1,0 +1,13 @@
+name: create branch
+on:
+ workflow_dispatch 
+jobs:
+  create_branch_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create_Branch
+        uses: robvanderleek/create-issue-branch@main
+        env:
+          GITHUB_TOKEN: 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
+      - name: Echo branch name
+          run: echo ${{ steps.Create_Branch.outputs.branchName }}
