@@ -1,0 +1,19 @@
+name: create branch
+on:
+ workflow_dispatch: 
+jobs:
+  create_branch_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: apt update
+      run: sudo apt update 
+    - name: git install
+      run: sudo apt install git
+    - name: global user email
+      run: git config --global user.email "zabarishi@gmail.com"
+    - name: gloabl user id
+      run: git config --global user.name "zabarishi"
+    - name: curl git  
+      run: curl -u "username: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" https://github.com/zabarishi/terraform-demo/tree/master
+    - name: create new branch
+      run: git checkout -b www/worktest    
